@@ -1,0 +1,292 @@
+/* Kleuren geïnspireerd op het 'Wine and Dine' palet */
+:root {
+    --wine-dark: #292021;
+    --wine-red: #5D0F0F;
+    --wine-rose: #895353;
+    --wine-taupe: #A98D8C;
+    --wine-light: #E9D8D5;
+
+    --text: var(--wine-dark);
+    --background: #fefaf9;
+    --accent: var(--wine-red);
+    --accent-hover: #7a1a1a;
+    --nav-bg: var(--wine-light);
+    --banner-bg: var(--wine-red);
+    --footer-bg: var(--wine-light);
+}
+
+/* Algemene stijl */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+p + p {
+    margin-top: 1rem; /* ruimte tussen eerste en tweede p */
+}
+
+.paginaomschrijving,
+.banner p,
+.paginaomschrijving + p {
+    margin: 0 auto;
+    max-width: 50em;
+    text-align: center;
+}
+
+
+
+/* Header */
+header {
+    background-color: var(--nav-bg);
+    padding: 1rem 2rem; /* top-bottom en links-rechts */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.logo img {
+    height: 4rem;
+}
+
+/* Navigatie */
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-list a {
+    padding: 0.5rem 1rem; /* top-bottom en links-rechts */
+    border-radius: 0.5rem; /* afgeronde hoeken */
+    color: var(--text);
+}
+
+.nav-list a:hover,
+.nav-list a:focus {
+    background-color: var(--wine-rose);
+    color: var(--background);
+}
+
+.nav-list a.active {
+    font-weight: bold;
+    color: var(--accent);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+p a,
+ul#contact a {
+    text-decoration: underline;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    color: var(--accent-hover);
+}
+
+/* Banner en Intro-sectie */
+.banner {
+    background-color: var(--banner-bg);
+    padding: 2rem;
+    text-align: center;
+    color: var(--background);
+}
+
+h1.banner,
+.banner h1 {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+}
+
+/* Secties */
+section {
+    padding: 1.5rem;
+    background-color: var(--background);
+}
+
+section h2 {
+    font-size: 1.35rem;
+    margin-bottom: 1rem;
+}
+
+.content {
+    max-width: 70ch;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 0.15rem solid var(--wine-taupe);
+}
+
+/* Call-To-Action Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--accent);
+    color: var(--background);
+    border-radius: 0.5rem;
+    justify-self: center;
+    max-width: 15rem;
+    align-items: center;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--wine-rose);
+    color: var(--background);
+}
+
+.banner .cta-button {
+    background-color: var(--background);
+    color: var(--wine-dark);
+}
+
+.banner .cta-button:hover,
+.banner .cta-button:focus {
+    background-color: var(--wine-rose);
+    color: var(--background);
+}
+
+#verstuurknop:hover {
+    text-decoration: underline; 
+}
+
+/* Wijnassortiment */
+section.wijnaanbod {
+    display: block;
+    text-align: center;
+}
+
+section.wijnaanbod p {
+    text-align: left;
+}
+
+section.wijnaanbod img {
+    max-width: 20rem;
+}
+
+section.wijnaanbod .cta-button {
+    margin-bottom: 1.5rem;
+}
+
+/* Bestel */
+em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.bestelform {
+    padding: 0.5rem;
+}
+
+.wijnnaam,
+.betaalmethode {
+    font-size: 1.1rem;
+}
+
+#prijslijst {
+    list-style: none;
+}
+
+
+form {
+    max-width: 100%;           
+    padding: 2.5rem 1.25rem;
+}
+
+form div {
+    margin-bottom: 2rem;
+}
+
+form label {
+    display: block; /* op aparte lijn */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 0.15rem solid #0000002b;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}
+
+/* Praktisch */
+#contact {
+    margin-left: 2rem;
+}
+
+address {
+    font-style: italic;
+}
+
+/* Responsiviteit voor grotere schemen */
+@media (min-width: 60em) {
+    .nav-list {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between; /* Logo links, nav rechts */
+        align-items: center; /* verticaal gecentreerd */
+    }
+
+    h1.banner,
+    .banner h1 {
+        font-size: 1.75rem;
+    }
+
+    section.wijnaanbod {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: center;
+        gap: 2rem;
+    }
+
+    section.wijnaanbod img {
+    max-width: 100%;
+    }
+
+    form {
+    max-width: 70ch;
+    margin: 0 auto;
+    }
+}

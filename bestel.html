@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestelformulier - Wijnverkoop Chiro De Vraai</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="math.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Chiro De Vraai">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="wijnassortiment.html">Wijnassortiment</a></li>
+                <li><a href="bestel.html" class="active">Bestel</a></li>
+                <li><a href="praktisch.html">Praktisch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="banner">🎄 Wijnverkoop Chiro De Vraai 🎄</h1>
+        <section class="paginaomschrijving">
+            <h2>Bestel je wijn</h2>
+            <p>Vul onderstaand formulier in om je bestelling te plaatsen. Betaling gebeurt cash bij afhaling of op voorhand via overschrijving (BEXXXXXX). Een fles kost <em>11 euro</em> en een doos (6 flessen) is verkrijgbaar aan de voordelige prijs van <em>60 euro</em>. Na het versturen van je bestelling ontvang je een bevestigingsmail met een overzicht van je bestelling.</p>
+        </section>
+
+        <section class="bestelform">
+            <h3 class="paginaomschrijving">Bestelformulier</h3>
+            <p>Verplichte velden zijn aangeduid met een *.</p>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSew4Gtp3t307ABstiFxb0OcsXTTvU6abiBDug3MrEkDTpiRoQ/formResponse" method="POST" target="_blank">
+                <!-- Verborgen veld voor kostprijs -->
+                <input type="hidden" name="entry.221395653" id="kostprijs" value="">
+
+                <div>
+                    <label for="voornaam">Voornaam: *</label>
+                    <input type="text" id="voornaam" name="entry.140769913" required>
+                </div>
+
+                <div>
+                    <label for="achternaam">Achternaam: *</label>
+                    <input type="text" id="achternaam" name="entry.1017405100" required>
+                </div>
+
+                <div>
+                    <label for="email">E-mailadres: *</label>
+                    <input type="email" id="email" name="entry.1586214579" required>
+                </div>
+
+                <div>
+                    <label class="wijnnaam">Château Chireau Rouge:</label>
+                    <label>Aantal flessen <input type="number" name="entry.1267685497" id="rood_flessen" min="0" value="0"></label>
+                    <label>Aantal dozen (6 flessen) <input type="number" name="entry.1032203904" id="rood_dozen" min="0" value="0"></label>
+                </div>
+
+                <div>
+                    <label class="wijnnaam">Château Chireau Blanc:</label>
+                    <label>Aantal flessen <input type="number" name="entry.2040454508" id="wit_flessen" min="0" value="0"></label>
+                    <label>Aantal dozen (6 flessen) <input type="number" name="entry.624244998" id="wit_dozen" min="0" value="0"></label>
+                </div>
+
+                <div>
+                    <label class="wijnnaam">Château Chireauzé:</label>
+                    <label>Aantal flessen <input type="number" name="entry.1316571934" id="rose_flessen" min="0" value="0"></label>
+                    <label>Aantal dozen (6 flessen) <input type="number" name="entry.1047627196" id="rose_dozen" min="0" value="0"></label>
+                </div>
+
+                <div>
+                    <label for="opmerkingen">Opmerkingen:</label>
+                    <textarea id="opmerkingen" name="entry.1812211210" rows="4"></textarea>
+                </div>
+
+                <!-- Nieuw readonly veld voor totaalprijs -->
+                <div>
+                    <label for="totaalprijs">Totale prijs:</label>
+                    <input type="text" id="totaalprijs" readonly>
+                </div>
+
+                <button type="submit" class="cta-button" id="verstuurknop">Verstuur bestelling</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Vollegaaas Productions · <a href="mailto:wijnchirodevraai@gmail.com">wijnchirodevraai@gmail.com</a></p>
+    </footer>
+</body>
+</html>
