@@ -255,7 +255,7 @@ address {
 }
 
 /* Responsiviteit voor grotere schemen */
-@media (min-width: 60em) {
+@media (min-width: 50em) {
     .nav-list {
         flex-direction: row;
         justify-content: flex-end;
