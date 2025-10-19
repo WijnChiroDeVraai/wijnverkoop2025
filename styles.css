@@ -290,3 +290,47 @@ address {
     margin: 0 auto;
     }
 }
+
+/* Leveringsopties */
+#levering {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 0.15rem solid #0000002b;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+#levering:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0.2rem var(--accent);
+}
+
+/* Adresvelden */
+#adresvelden {
+    transition: all 0.3s ease;
+}
+
+#adresvelden label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+#adresvelden input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 0.15rem solid #0000002b;
+    border-radius: 0.5rem;
+    background-color: var(--background);
+}
+
+#adresvelden input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0.2rem var(--accent);
+}
