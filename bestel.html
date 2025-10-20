@@ -28,7 +28,7 @@
         <h1 class="banner">🎄 Wijnverkoop Chiro De Vraai 🎄</h1>
         <section class="paginaomschrijving">
             <h2>Bestel je wijn</h2>
-            <p>Vul onderstaand formulier in om je bestelling te plaatsen. Betaling gebeurt cash bij afhaling of op voorhand via overschrijving (BE03 7370 5768 0384). Een fles kost <em>11 euro</em> en een doos (6 flessen) is verkrijgbaar aan de voordelige prijs van <em>60 euro</em>. Na het versturen van je bestelling ontvang je een bevestigingsmail met een overzicht van je bestelling.</p>
+            <p>Vul onderstaand formulier in om je bestelling te plaatsen. Een fles kost <em>11 euro</em> en een doos (6 flessen) is verkrijgbaar aan de voordelige prijs van <em>60 euro</em>. Betaling gebeurt op voorhand via overschrijving (BE03 7370 5768 0384) of bij het afhalen. Als je kiest voor levering aan huis, is het enkel mogelijk om via overschrijving te betalen. Na het versturen van je bestelling ontvang je een bevestigingsmail met een overzicht van je bestelling.</p>
         </section>
 
         <section class="bestelform">
@@ -73,24 +73,17 @@
 
                 <div>
                     <label for="levering">Afhalen of levering aan huis</label>
-                    <select id="levering" name="entry.123456789" required>
-                        <option value="afhaling" selected>
-                            Afhalen op de Chiro
-                        </option>
-                        <option value="levering_zat">
-                            Levering op zat. 13/12/2025 (+€2)
-                        </option>
-                        <option value="levering_zon">
-                            Levering op zon. 14/12/2025 (+€2)
-                        </option>
+                    <select id="levering" name="entry.374853633" required>
+                        <option value="afhaling" selected>Afhalen op de Chiro</option>
+                        <option value="levering_zat">Levering op zat. 13/12/2025 (+€2)</option>
+                        <option value="levering_zon">Levering op zon. 14/12/2025 (+€2)</option>
                     </select>
                 </div>
 
                 <div id="adresvelden" style="display: none;">
                     <label for="adres">Adres voor levering (enkel Arendonk): *</label>
-                    <input type="text" id="adres" name="entry.987654321" placeholder="Straat + huisnummer, 2370 Arendonk">
+                    <input type="text" id="adres" name="entry.1586533512" placeholder="Straat + huisnummer, 2370 Arendonk">
                 </div>
-
 
                 <div>
                     <label for="opmerkingen">Opmerkingen:</label>
@@ -101,6 +94,15 @@
                 <div>
                     <label for="totaalprijs">Totale prijs:</label>
                     <input type="text" id="totaalprijs" readonly>
+                </div>
+
+                <!-- Betaalinstructie -->
+                <div class="betalingsinstructie" style="margin-top: 1em; padding: 1em; border: 1px solid #ccc; border-radius: 8px;">
+                    <p><strong>Betaling:</strong> Gelieve het totaalbedrag over te schrijven op het rekeningnummer 
+                        <strong>BE03 7370 5768 0384</strong> met vermelding van je <strong>naam</strong>.</p>
+                    <p>Of scan onderstaande QR-code en schrijf het bedrag over via Payconic:</p>
+                    <img src="img/qr-betaling.jpg" alt="QR-code betaling" style="width:180px; height:auto; display:block; margin:10px auto;">
+                    <p>Betaling bij afhaling is eveneens mogelijk. Als je kiest voor levering aan huis, is het enkel mogelijk om via overschrijving te betalen.</p>
                 </div>
 
                 <button type="submit" class="cta-button" id="verstuurknop">Verstuur bestelling</button>
