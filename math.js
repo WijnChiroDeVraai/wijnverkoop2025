@@ -24,28 +24,6 @@ function controleerOpZesFlessen() {
     });
 }
 
-function berekenPrijs() {
-    controleerOpZesFlessen();
-
-    let totaal = 0;
-
-    const dozenVelden = ['drood', 'dwit', 'drose'];
-    const flessenVelden = ['frood', 'fwit', 'frose'];
-
-    dozenVelden.forEach(id => {
-        const input = document.getElementsByName(`entry.${getEntryId(id)}`)[0];
-        totaal += parseInt(input.value || 0) * prijsDoos;
-    });
-
-    flessenVelden.forEach(id => {
-        const input = document.getElementsByName(`entry.${getEntryId(id)}`)[0];
-        totaal += parseInt(input.value || 0) * prijsFles;
-    });
-
-    totaalveld.value = '€ ' + totaal;
-    verborgenVeld.value = totaal;
-}
-
 const leveringSelect = document.getElementById('levering');
 const adresVelden = document.getElementById('adresvelden');
 
@@ -68,7 +46,7 @@ function berekenPrijs() {
     });
 
     // Extra: leveringstoeslag
-    if (leveringSelect && (leveringSelect.value === 'levering_zat' || leveringSelect.value === 'levering_zon')) {
+    if (leveringSelect && (leveringSelect.value === 'Leveren zat' || leveringSelect.value === 'Leveren zon')) {
         totaal += 2;
     }
 
@@ -79,7 +57,7 @@ function berekenPrijs() {
 // Toon/verberg adresveld afhankelijk van leveringskeuze
 if (leveringSelect) {
     leveringSelect.addEventListener('change', () => {
-        if (leveringSelect.value === 'levering_zat' || leveringSelect.value === 'levering_zon') {
+        if (leveringSelect.value === 'Leveren zat' || leveringSelect.value === 'Leveren zon') {
             adresVelden.style.display = 'block';
             document.getElementById('adres').required = true;
         } else {
@@ -89,7 +67,6 @@ if (leveringSelect) {
         berekenPrijs();
     });
 }
-
 
 inputs.forEach(input => {
     input.addEventListener('input', berekenPrijs);
