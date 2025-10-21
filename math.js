@@ -15,12 +15,14 @@ function controleerOpZesFlessen() {
     paren.forEach(({ flessen, dozen }) => {
         const flesInput = document.getElementsByName(`entry.${getEntryId(flessen)}`)[0];
         const doosInput = document.getElementsByName(`entry.${getEntryId(dozen)}`)[0];
-        const aantalFlessen = parseInt(flesInput.value || 0);
+        let aantalFlessen = parseInt(flesInput.value || 0);
 
-        if (aantalFlessen === 6) {
-            flesInput.value = 0;
-            doosInput.value = parseInt(doosInput.value || 0) + 1;
-        }
+        // Omzetten van flessen naar dozen
+        const extraDozen = Math.floor(aantalFlessen / 6);
+        aantalFlessen = aantalFlessen % 6;
+
+        flesInput.value = aantalFlessen;
+        doosInput.value = parseInt(doosInput.value || 0) + extraDozen;
     });
 }
 
