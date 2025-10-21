@@ -334,3 +334,16 @@ address {
     border-color: var(--accent);
     box-shadow: 0 0 0.2rem var(--accent);
 }
+
+/* Zorg dat mobiele browsers de standaard pijltjes tonen */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: auto;
+}
+
+/* Zorg dat Chrome op mobiel ook pijltjes toont */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: inner-spin-button !important;
+  margin: 0;
+}
